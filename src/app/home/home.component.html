@@ -1,0 +1,73 @@
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon mat-button [matMenuTriggerFor]="menu">menu</mat-icon>
+  </button>
+  <mat-menu style="height: 500px" #menu="matMenu">
+    <button mat-menu-item routerLink="/">
+      <mat-icon color="warn">home</mat-icon> home
+    </button>
+    <button mat-menu-item routerLink="/dashboard">
+      <mat-icon color="primary">dashboard</mat-icon> DashBoard
+    </button>
+    <button mat-menu-item routerLink="/approval">
+      <mat-icon color="accent">approval</mat-icon> Approval
+    </button>
+    <button mat-menu-item routerLink="/">
+      <mat-icon color="warn">phone</mat-icon> contact
+    </button>
+    <button mat-menu-item routerLink="/">
+      <mat-icon color="accent">share</mat-icon> Share
+    </button>
+  </mat-menu>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <button
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+  >
+    <mat-icon routerLink="home">home</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon routerLink="/dashboard">dashboard</mat-icon>
+  </button>
+</mat-toolbar>
+
+<section>
+  <div class="form-container">
+    <form [formGroup]="loginForm" class="form">
+      <mat-form-field class="form-field">
+        <input matInput formControlName="username" placeholder="Username">
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <input matInput formControlName="password" type="password" placeholder="Password">
+      </mat-form-field>
+      <button mat-raised-button color="accent" style="padding:3px 30px" (click)="onLogin()">Login</button>
+    </form>
+  </div>
+</section>
+
+<!-- <table>
+
+
+  <tr>
+    <th>id</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{user.id}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.age}}</td>
+    <td><button>Edit</button> &nbsp; <button (click)="deleteEmployee(user.id)">Delete</button></td>
+  </tr>
+</table> -->

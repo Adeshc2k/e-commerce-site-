@@ -1,0 +1,54 @@
+table{
+  width: 40%;
+  border-collapse: collapse;
+}
+
+th,tr,td{
+  border: 1px solid black;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+::ng-deep .mat-menu-item{
+   font-size: 1rem;
+   font-weight: bolder;
+}
+::ng-deep.mat-menu-content{
+  height: 90vh !important;
+  width: 200px !important;
+
+}
+
+::ng-deep.mat-menu-panel{
+  margin-top:20px;
+  margin-left: -23px;
+  background-color: #dddddd;
+}
+
+
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  background-color:pink;
+}
+
+.form {
+  width: 500px;
+  padding: 60px;
+  background-image: url( https://designseer.com/wp-content/uploads/animated-simple-form.gif);
+
+
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 16px;
+
+}
