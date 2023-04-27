@@ -12,4 +12,5 @@ export class ApprovalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  items = ['Buy groceries', 'Do laundry', 'Clean the house'];
 }

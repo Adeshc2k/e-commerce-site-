@@ -1,54 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '../service/employee.service';
-import { FormBuilder } from '@angular/forms';
+import { Component,  TemplateRef,  ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  users:any
-  constructor(private _ser:EmployeeService, private fb:FormBuilder){}
+  @ViewChild('myForm') myForm:TemplateRef<any>
+  pdfSrc;
 
-  loginForm=this.fb.group({
-    username:[],
-    password:[]
-  })
-  ngOnInit(){
-    this.getEmployees()
+  constructor(private dialog: MatDialog,private sanitizer: DomSanitizer) {
+    this.pdfSrc = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.africau.edu/images/default/sample.pdf');
+
+   }
+
+  openDailog(){
+    this.dialog.open(this.myForm)
   }
 
 
 
-  onLogin(){
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-  getEmployees(){
-    this._ser.getEmployees().subscribe((result)=>{
-      this.users=result;
-    })
-  }
-
-  deleteEmployee(id:number){
-    this._ser.deleteEmployees(id).subscribe((res)=>{
-      alert("delete SucessFully")
-      this.getEmployees()
-    })
-  }
 
 
 }

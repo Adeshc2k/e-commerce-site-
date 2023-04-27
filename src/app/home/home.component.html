@@ -26,6 +26,13 @@
   <span>My App</span>
   <span class="example-spacer"></span>
   <button
+  mat-icon-button
+  class="example-icon"
+  aria-label="Example icon-button with share icon"
+>
+  <mat-icon (click)="openDailog()">login</mat-icon>
+</button>
+  <button
     mat-icon-button
     class="example-icon favorite-icon"
     aria-label="Example icon-button with heart icon"
@@ -41,33 +48,126 @@
   </button>
 </mat-toolbar>
 
+
+
+
+<ng-template #myForm>
+  <mat-toolbar color="primary">
+
+    <span>Login Form</span>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+
+  <div class="row">
+    <div class="col-6">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>First name</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+    <div class="col-6">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Last name</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row ">
+    <div class="col-6">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>UserName</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+    <div class="col-6">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>password</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-6">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Mobile No</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+    <div class="col-6">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Education</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row">
+   <div class="col-12 text-end">
+    <button mat-raised-button color="warn" class="mx-2" >cancle</button>
+    <button mat-raised-button color="primary">save</button>
+   </div>
+  </div>
+</ng-template>
+
 <section>
-  <div class="form-container">
-    <form [formGroup]="loginForm" class="form">
-      <mat-form-field class="form-field">
-        <input matInput formControlName="username" placeholder="Username">
-      </mat-form-field>
-      <mat-form-field class="form-field">
-        <input matInput formControlName="password" type="password" placeholder="Password">
-      </mat-form-field>
-      <button mat-raised-button color="accent" style="padding:3px 30px" (click)="onLogin()">Login</button>
-    </form>
+  <div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1682411157_Sansui_Desktop.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1682505274_Moto_G42_Desktop.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1682358890_Cycles.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </section>
 
-<!-- <table>
+<section>
+  <img class="adi" src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1682435474_Sim_Delivery_25042023_1240_X_194_px.jpg" alt="">
+</section>
+
+<div class="cards">
 
 
-  <tr>
-    <th>id</th>
-    <th>Name</th>
-    <th>Age</th>
-    <th>Action</th>
-  </tr>
-  <tr *ngFor="let user of users">
-    <td>{{user.id}}</td>
-    <td>{{user.name}}</td>
-    <td>{{user.age}}</td>
-    <td><button>Edit</button> &nbsp; <button (click)="deleteEmployee(user.id)">Delete</button></td>
-  </tr>
-</table> -->
+    <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1682426553_Home_Furnishing.jpg" alt="">
+
+
+
+    <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1682426637_Cookware_Range.jpg" alt="">
+
+
+
+    <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1682426711_Toys.jpg" alt="">
+
+
+
+    <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1682426711_Toys.jpg" alt="">
+
+
+
+</div>
+
+
+  <!-- <div *ngIf="pdfSrc" class="pdf-container">
+    <pdf-viewer [src]="pdfSrc" [show-all]="true"></pdf-viewer>
+  </div> -->
+

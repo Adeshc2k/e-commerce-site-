@@ -9,15 +9,15 @@ export class EmployeeService {
   constructor(private _http:HttpClient) { }
 
   getEmployees(){
-    return this._http.get('http://localhost:3000/getData')
+    return this._http.get('http://localhost:3000/login')
   }
 
   deleteEmployees(id:number){
-    return this._http.delete(`http://localhost:3000/delete/${id}`)
+    return this._http.delete(`http://localhost:3000/login/${id}`)
 
   }
 
   addEmployees(data:any){
-    return this._http.post('http://localhost:3000/createUser',data)
+    return this._http.post('hhttp://localhost:3000/login',data)
   }
 }

@@ -52,3 +52,27 @@ th,tr,td{
   margin-bottom: 16px;
 
 }
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.adi{
+  width: 95%;
+  height: 100%;
+  border-radius: 4px;
+  margin: 10px 35px;
+
+}
+
+.cards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.pdf-container {
+  height: 100vh;
+}

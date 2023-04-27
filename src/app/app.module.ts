@@ -9,14 +9,18 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MaterialModule } from './material/material.module';;
 import {MatMenuModule} from '@angular/material/menu';
 import { ApprovalComponent } from './approval/approval.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import {MatCardModule} from '@angular/material/card';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DashboardComponent,
-    ApprovalComponent
+    ApprovalComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     MaterialModule,
     MatMenuModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    MatCardModule,
+    PdfViewerModule,
+    PdfViewerModule,
+
+
 
   ],
   providers: [],
