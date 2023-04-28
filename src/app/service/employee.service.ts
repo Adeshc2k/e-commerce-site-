@@ -8,16 +8,11 @@ export class EmployeeService {
 
   constructor(private _http:HttpClient) { }
 
-  getEmployees(){
-    return this._http.get('http://localhost:3000/login')
-  }
+ getUser(){
+  return this._http.get('https://jsonplaceholder.typicode.com/posts')
+ }
 
-  deleteEmployees(id:number){
-    return this._http.delete(`http://localhost:3000/login/${id}`)
-
-  }
-
-  addEmployees(data:any){
-    return this._http.post('hhttp://localhost:3000/login',data)
-  }
+ deleteUser(id){
+  return this._http.delete(`https://jsonplaceholder.typicode.com/posts/${id}`)
+ }
 }
