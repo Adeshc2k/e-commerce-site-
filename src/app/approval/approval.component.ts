@@ -11,10 +11,14 @@ export class ApprovalComponent implements OnInit {
   users:any;
   displayedColumns: string[] = ['userId', 'id', 'title', 'body','action'];
   dataSource:any;
+  doc: boolean = false;
   constructor(private _ser:EmployeeService) { }
 
   ngOnInit(): void {
     this.getUser()
+  }
+  Docviewer(){
+    this.doc = true;
   }
 
   getUser(){
@@ -33,4 +37,6 @@ export class ApprovalComponent implements OnInit {
       window.location.reload()
     })
   }
+
+ docs=" https://drive.google.com/file/d/0B5ImRpiNhCfGZDVhMGEyYmUtZTdmMy00YWEyLWEyMTQtN2E2YzM3MDg3MTZh/preview"
 }

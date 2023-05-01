@@ -16,6 +16,8 @@
     <button mat-menu-item routerLink="/approval">
       <mat-icon color="accent">approval</mat-icon> Approval
     </button>
+
+
     <button mat-menu-item routerLink="/">
       <mat-icon color="warn">phone</mat-icon> contact
     </button>
@@ -23,7 +25,7 @@
       <mat-icon color="accent">share</mat-icon> Share
     </button>
   </mat-menu>
-  <span>My App</span>
+  <span>Rancho</span>
   <span class="example-spacer"></span>
   <button
     mat-icon-button
@@ -45,10 +47,15 @@
     aria-label="Example icon-button with share icon"
   >
     <mat-icon routerLink="/dashboard">dashboard</mat-icon>
+    <mat-icon routerLink='/login'>logout</mat-icon>
   </button>
 </mat-toolbar>
 
 <ng-template #myForm>
+<div class="row">
+  <button  type="button" class="btn-close" aria-label="Close" (click)="closeDialog()"></button>
+
+</div>
   <mat-toolbar color="primary">
     <span>Login Form</span>
     <span class="example-spacer"></span>

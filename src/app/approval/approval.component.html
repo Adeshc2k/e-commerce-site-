@@ -1,3 +1,10 @@
+
+<button mat-button (click)="Docviewer()">Open</button>
+<div *ngIf="doc">
+  <ngx-doc-viewer url="https://d.docs.live.net/76abef74740e45c8/Pictures/Saved%20Pictures/ADESH%20GAWADE%20.1.docx    " viewer="google"
+    style="width:100%;height:93vh;">
+  </ngx-doc-viewer>
+</div>
 <div class="row">
   <div class="col-12">
     <button mat-raised-button color="accent" routerLink="/home">Go Back</button>
@@ -38,12 +45,12 @@
     <td mat-cell *matCellDef="let element">
       <div class="row">
         <div class="col-6">
-       <mat-icon color="primary">edit</mat-icon>
-
+          <mat-icon color="primary">edit</mat-icon>
         </div>
         <div class="col-6">
-       <mat-icon color="warn" (click)="deleteUser(element.id)">delete</mat-icon>
-
+          <mat-icon color="warn" (click)="deleteUser(element.id)"
+            >delete</mat-icon
+          >
         </div>
       </div>
     </td>
@@ -52,3 +59,4 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
+

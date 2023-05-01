@@ -23,7 +23,9 @@ export class HomeComponent {
     this.dialog.open(this.myForm)
   }
 
-
+  closeDialog(){
+  this.dialog.closeAll()
+  }
 
 
 
