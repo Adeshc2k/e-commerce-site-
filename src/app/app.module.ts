@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import {MatCardModule} from '@angular/material/card';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
 
 @NgModule({

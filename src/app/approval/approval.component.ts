@@ -7,36 +7,38 @@ import { MatTableDataSource } from '@angular/material/table';
   templateUrl: './approval.component.html',
   styleUrls: ['./approval.component.scss']
 })
-export class ApprovalComponent implements OnInit {
+export class ApprovalComponent {
   users:any;
   displayedColumns: string[] = ['userId', 'id', 'title', 'body','action'];
   dataSource:any;
+
   doc: boolean = false;
   constructor(private _ser:EmployeeService) { }
 
-  ngOnInit(): void {
-    this.getUser()
-  }
+  // ngOnInit(): void {
+  //   this.getUser()
+  // }
   Docviewer(){
     this.doc = true;
   }
 
-  getUser(){
-    this._ser.getUser().subscribe((result)=>{
+  // getUser(){
+  //   this._ser.getUser().subscribe((result)=>{
 
-      this.users=result
-     this.dataSource = new MatTableDataSource<any>(this.users);
-    })
-  }
+  //     this.users=result
+  //    this.dataSource = new MatTableDataSource<any>(this.users);
+  //   })
+  // }
 
-  deleteUser(id:any){
-    debugger
-    this._ser.deleteUser(id).subscribe((result)=>{
-      alert("deleted sucessfully")
-      this.getUser()
-      window.location.reload()
-    })
-  }
+  // deleteUser(id:any){
+  //   debugger
+  //   this._ser.deleteUser(id).subscribe((result)=>{
+  //     alert("deleted sucessfully")
+  //     this.getUser()
+  //     window.location.reload()
+  //   })
+  // }
 
- docs=" https://drive.google.com/file/d/0B5ImRpiNhCfGZDVhMGEyYmUtZTdmMy00YWEyLWEyMTQtN2E2YzM3MDg3MTZh/preview"
+  docs=" https://drive.google.com/file/d/0B5ImRpiNhCfGZDVhMGEyYmUtZTdmMy00YWEyLWEyMTQtN2E2YzM3MDg3MTZh/preview"
+  docUrl = 'https://example.com/document.docx';
 }

@@ -11,6 +11,7 @@ const routes: Routes = [
   {path:'dashboard' ,component:DashboardComponent},
   {path:'approval',component:ApprovalComponent},
   {path:'login',component:LoginComponent},
+  {path:'admin',loadChildren:()=>import('./admin/admin.module').then(m => m.AdminModule)}
 ];
 
 @NgModule({

@@ -1,3 +1,4 @@
+import { EmployeeService } from './../service/employee.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
@@ -6,12 +7,13 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
 
   myForm: FormGroup;
+  options: any;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private ser:EmployeeService) { }
 
   ngOnInit() {
     this.myForm = this.fb.group({
@@ -19,6 +21,14 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
+    this.getEmployees()
+
+  }
+
+  getEmployees(){
+    this.ser.getEmployees().subscribe(res=> this.options=res)
+
+
   }
 }
 
